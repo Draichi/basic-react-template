@@ -2,12 +2,12 @@ import { Route, Switch } from "react-router-dom";
 import AllMeetupsPage from "./pages/AllMeetups";
 import FavoritesPage from "./pages/Favorites";
 import NewMeetupPage from "./pages/NewMeetup";
-import { Toolbar } from "@material-ui/core";
+import { Toolbar, Container } from "@material-ui/core";
 
 import MainNavigation from "./layout/MainNavigation";
 function App() {
   return (
-    <div>
+    <Container>
       <MainNavigation />
       <Toolbar />
       <Switch>
@@ -21,7 +21,7 @@ function App() {
           <FavoritesPage />
         </Route>
       </Switch>
-    </div>
+    </Container>
   );
 }
 

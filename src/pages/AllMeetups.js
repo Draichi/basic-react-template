@@ -1,4 +1,5 @@
 import MeetupList from "../components/MeetupList";
+import { Typography } from "@material-ui/core";
 
 const DUMMY_DATA = [
   {
@@ -24,7 +25,9 @@ const DUMMY_DATA = [
 const AllMeetupsPage = () => {
   return (
     <section>
-      <h1>All meetups</h1>
+      <Typography component="h1" variant="h2">
+        All meetups
+      </Typography>
       <MeetupList meetups={DUMMY_DATA} />
     </section>
   );
