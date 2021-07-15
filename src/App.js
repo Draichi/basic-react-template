@@ -2,14 +2,11 @@ import { Route, Switch } from "react-router-dom";
 import AllMeetupsPage from "./pages/AllMeetups";
 import FavoritesPage from "./pages/Favorites";
 import NewMeetupPage from "./pages/NewMeetup";
-import { Toolbar, Container } from "@material-ui/core";
+import Layout from "./layout/Layout";
 
-import MainNavigation from "./layout/MainNavigation";
 function App() {
   return (
-    <Container>
-      <MainNavigation />
-      <Toolbar />
+    <Layout>
       <Switch>
         <Route path="/" exact>
           <AllMeetupsPage />
@@ -21,7 +18,7 @@ function App() {
           <FavoritesPage />
         </Route>
       </Switch>
-    </Container>
+    </Layout>
   );
 }
 
