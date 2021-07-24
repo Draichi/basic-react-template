@@ -5,7 +5,7 @@ const MeetupList = (props) => {
   return (
     <Grid container direction="column" spacing={9}>
       {props.meetups.map((meetup) => (
-        <Grid item xs={12}>
+        <Grid item xs={12} key={meetup.id}>
           <MeetupItem key={meetup.id} {...meetup} />
         </Grid>
       ))}

@@ -19,26 +19,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NewMeetupForm = () => {
+const NewMeetupForm = (props) => {
   const classes = useStyles();
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
-  function submitHandler(event) {
+  const submitHandler = (event) => {
     event.preventDefault();
-    const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
-    console.log({
-      enteredTitle,
-      enteredImage,
-      enteredAddress,
-      enteredDescription,
+    const title = titleInputRef.current.value;
+    const imageUrl = imageInputRef.current.value;
+    const location = addressInputRef.current.value;
+    const description = descriptionInputRef.current.value;
+
+    props.onAddMeetup({
+      title,
+      imageUrl,
+      location,
+      description,
     });
-  }
+  };
 
   return (
     <Card className={classes.card}>

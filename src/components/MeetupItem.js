@@ -20,7 +20,7 @@ const MeetupItem = (props) => {
       <CardContent>
         <CardMedia
           className={classes.media}
-          image={props.image}
+          image={props.imageUrl}
           title={props.title}
         />
         <Typography component="h3" gutterBottom variant="h3">
