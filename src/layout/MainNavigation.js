@@ -1,9 +1,12 @@
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button, Badge } from "@material-ui/core";
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import FavoritesContext from "store/favorites-context";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+  const favoritesContext = useContext(FavoritesContext);
+
   return (
     <AppBar>
       <Toolbar>
@@ -15,11 +18,13 @@ const MainNavigation = () => {
             All meetups
           </Button>
         </Typography>
-        <Typography>
-          <Button component={Link} to={"/favorites"} color="inherit">
-            Favorites
-          </Button>
-        </Typography>
+        <Badge badgeContent={favoritesContext.totalFavorites} color="secondary">
+          <Typography>
+            <Button component={Link} to={"/favorites"} color="inherit">
+              Favorites
+            </Button>
+          </Typography>
+        </Badge>
         <Typography>
           <Button component={Link} to={"/new-meetup"} color="inherit">
             New meetup
